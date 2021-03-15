@@ -10,10 +10,10 @@
 
 import UIKit
 
-class FSPagerCollectionView: UICollectionView {
+open class FSPagerCollectionView: UICollectionView {
     
     #if !os(tvOS)
-    override var scrollsToTop: Bool {
+    open override var scrollsToTop: Bool {
         set {
             super.scrollsToTop = false
         }
@@ -23,7 +23,7 @@ class FSPagerCollectionView: UICollectionView {
     }
     #endif
     
-    override var contentInset: UIEdgeInsets {
+    open override var contentInset: UIEdgeInsets {
         set {
             super.contentInset = .zero
             if (newValue.top > 0) {
@@ -41,7 +41,7 @@ class FSPagerCollectionView: UICollectionView {
         self.commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.commonInit()
     }
